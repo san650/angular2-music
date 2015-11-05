@@ -50,6 +50,7 @@ $ ng serve
 
 Note that on Windows you need to start the development server using Admin
 permissions [1](https://github.com/angular/angular-cli#known-issues).
+<<<<<<< HEAD
 
 ## 2. Creating base structure
 
