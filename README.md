@@ -50,7 +50,6 @@ $ ng serve
 
 Note that on Windows you need to start the development server using Admin
 permissions [1](https://github.com/angular/angular-cli#known-issues).
-<<<<<<< HEAD
 
 ## 2. Creating base structure
 
@@ -62,6 +61,7 @@ Copy the assets to the project
 $ curl VENDOR_CSS_URL src/vendor.css
 $ curl MUSIC_CSS_URL src/app/music.css
 $ curl MUSIC_HTML_URL src/app/music.html
+$ copy IMAGES/*.jpg src/images/
 ```
 
 ### 2.2 Link vendor.css
