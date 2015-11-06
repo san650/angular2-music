@@ -120,3 +120,57 @@ import {MusicApp} from './app/music';
 
 bootstrap(MusicApp, [HTTP_PROVIDERS]);
 ```
+
+### 3.3 Load the list of albums
+
+New template syntax
+
+* Using `*` to prefix directives e.g. `*ng-for`
+* Using `[...]` to bind attributes
+* Using `(...)` to bind events
+* Using `[(...)]` to do two-way bindings
+* Using `#` to create local template variables
+
+Note that in the case of events, you can use `^` sign as prefix to tell
+Angular to bubble the event up the component tree.
+
+---
+
+Let's read the list of albums from the context and iterate using the `ngFor`
+directive. Let's create it in two steps, first load the list of albums from an
+array and then from a json file using the `http` service.
+
+Change the template to generate the list of album covers
+
+src/app/music.html
+
+```html
+<div *ng-for="#album of albums">
+  <div class="col-sm-3 col-md-3 col-lg-2 media default image-grid genre">
+    <a>
+      <div class="genreImage" [style.background-image]="'url('+album.image+')'"></div>
+    </a>
+  </div>
+</div>
+```
+
+And on the JavaScript side return the list of albums
+
+src/app/music.ts
+
+```js
+import {Http} from 'angular2/http';
+
+...
+
+constructor(private http:Http) {
+  http
+    .get("/albums.json")
+    .map(response => response.json()["albums"])
+    .subscribe(albums => this.albums = albums)
+}
+
+...
+```
+
+More info about [`http`](https://angular.io/docs/js/latest/api/http/Http-class.html).

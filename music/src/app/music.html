@@ -32,27 +32,10 @@
       </div>
       <div id="genresAndMoods">
         <div class="row fivecolumns">
-          <div>
+          <div *ng-for="#album of albums">
             <div class="col-sm-3 col-md-3 col-lg-2 media default image-grid genre">
               <a>
-                <div class="genreImage" style="background-image: url('/images/ramones-ramones.jpg');">
-                </div>
-              </a>
-            </div>
-          </div>
-          <div>
-            <div class="col-sm-3 col-md-3 col-lg-2 media default image-grid genre">
-              <a>
-                <div class="genreImage" style="background-image: url('/images/ramones-leave-home.jpg');">
-                </div>
-              </a>
-            </div>
-          </div>
-          <div>
-            <div class="col-sm-3 col-md-3 col-lg-2 media default image-grid genre">
-              <a>
-                <div class="genreImage" style="background-image: url('/images/ramones-rocket-to-russia.jpg');">
-                </div>
+                <div class="genreImage" [style.background-image]="'url('+album.image+')'"></div>
               </a>
             </div>
           </div>

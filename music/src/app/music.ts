@@ -1,15 +1,21 @@
-import {Component, bootstrap} from 'angular2/angular2';
+import {Component, bootstrap, NgFor} from 'angular2/angular2';
+import {Http} from 'angular2/http';
 
 @Component({
   selector: 'music-app',
   providers: [],
   templateUrl: 'app/music.html',
   styleUrls: ['app/music.css'],
-  directives: [],
+  directives: [NgFor],
   pipes: []
 })
 export class MusicApp {
+  albums: any = [];
 
-  constructor() {}
-
+  constructor(private http:Http) {
+    http
+      .get("/albums.json")
+      .map(response => response.json()["albums"])
+      .subscribe(albums => this.albums = albums)
+  }
 }
