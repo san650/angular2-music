@@ -96,3 +96,27 @@ Copy the `albums.json` to `src/` folder.
 ```
 $ cp sources/albums.json music/src/
 ```
+
+### 3.2 Register `http` dependency
+
+We need to do a couple of steps here
+
+1. Import angular2/http js file
+2. Register the HTTP module so it can be injected in our app
+
+For the first step we need to register the file on `index.html`
+
+```html
+<script src="vendor/angular2/bundles/http.dev.js"></script>
+```
+
+For the second step we import `HTTP_PROVIDERS` from `angular2/http` file and
+then we add it as a dependency to the bootstrap.
+
+```js
+import {bootstrap} from 'angular2/angular2';
+import {HTTP_PROVIDERS} from 'angular2/http';
+import {MusicApp} from './app/music';
+
+bootstrap(MusicApp, [HTTP_PROVIDERS]);
+```
