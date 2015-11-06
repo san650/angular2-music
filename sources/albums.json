@@ -1,0 +1,79 @@
+{
+  "albums": [
+    {
+      "artist": "Ramones",
+      "album": "Ramones",
+      "image": "/images/ramones-ramones.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Leave Home",
+      "image": "/images/ramones-leave-home.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Rocket to Russia",
+      "image": "/images/ramones-rocket-to-russia.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Road to Ruin",
+      "image": "/images/ramones-road-to-ruin.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "End of the Century",
+      "image": "/images/ramones-end-of-the-century.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Pleasant Dreams",
+      "image": "/images/ramones-pleasant-dreams.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Subterranean Jungle",
+      "image": "/images/ramones-subterranean-jungle.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Too Tough to Die",
+      "image": "/images/ramones-too-tough-to-die.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Animal Boy",
+      "image": "/images/ramones-animal-boy.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Animal Boy",
+      "image": "/images/ramones-animal-boy.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Halfway to Sanity",
+      "image": "/images/ramones-halfway-to-sanity.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Brain Drain",
+      "image": "/images/ramones-brain-drain.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Mondo Bizarro",
+      "image": "/images/ramones-mondo-bizarro.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Acid Eaters",
+      "image": "/images/ramones-acid-eaters.jpg"
+    },
+    {
+      "artist": "Ramones",
+      "album": "Adios Amigos",
+      "image": "/images/ramones-adios-amigos.jpg"
+    }
+  ]
+}
