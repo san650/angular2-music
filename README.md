@@ -61,7 +61,7 @@ Copy the assets to the project
 $ curl VENDOR_CSS_URL src/vendor.css
 $ curl MUSIC_CSS_URL src/app/music.css
 $ curl MUSIC_HTML_URL src/app/music.html
-$ copy IMAGES/*.jpg src/images/
+$ copy IMAGES/ src/images/
 ```
 
 ### 2.2 Link vendor.css
@@ -83,4 +83,16 @@ Tell `music` component to load it's CSS file. This is done by passing the
 styleUrls: ['app/music.css'],
 ...
 })
+```
+
+## 3. Fetch albums from an external service
+
+We're going to simulate an external HTTP API so we're going to fetch albums.
+
+### 3.1 Copy dummy json file
+
+Copy the `albums.json` to `src/` folder.
+
+```
+$ cp sources/albums.json music/src/
 ```
