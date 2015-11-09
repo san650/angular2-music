@@ -482,3 +482,23 @@ $ ng generate tracks-page
 
 and copy the template and CSS.
 
+Then register the route and make the click on the album covers to navigate to
+this route.
+
+src/app/components/album-cover/album-cover.ts
+
+```js
+...
+import {Router} from 'angular2/router';
+
+...
+export class AlbumCover {
+  album: any;
+
+  constructor(private router:Router) {}
+
+  open() {
+    this.router.navigate(['Tracks']);
+  }
+}
+```

@@ -1,12 +1,18 @@
 import {Component} from 'angular2/angular2';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {AlbumsPage} from './components/albums-page/albums-page';
+import {TracksPage} from './components/tracks-page/tracks-page';
 
 @RouteConfig([
   {
-    path:"/",
-    as: "Albums",
+    path:'/',
+    as: 'Albums',
     component: AlbumsPage
+  },
+  {
+    path:'/tracks',
+    as: 'Tracks',
+    component: TracksPage
   }
 ])
 @Component({
