@@ -174,3 +174,155 @@ constructor(private http:Http) {
 ```
 
 More info about [`http`](https://angular.io/docs/js/latest/api/http/Http-class.html).
+
+## 4. Components
+
+Let's create a component that represents one album cover.
+
+```
+$ ng generate component album-cover
+version: 1.13.8
+installing component
+  create src/app/components/album-cover/album-cover.css
+  create src/app/components/album-cover/album-cover.html
+  create src/app/components/album-cover/album-cover.ts
+installing component-test
+  create src/app/components/album-cover/album-cover.spec.ts
+```
+
+The folder structure now is
+
+```
+$ tree -I 'node_modules|dist|temp|images' src/
+src/
+├── albums.json
+├── app
+│   ├── components
+│   │   └── album-cover
+│   │       ├── album-cover.css
+│   │       ├── album-cover.html
+│   │       ├── album-cover.spec.ts
+│   │       └── album-cover.ts
+│   ├── music.css
+│   ├── music.html
+│   └── music.ts
+├── app.ts
+├── favicon.ico
+├── index.html
+├── tsconfig.json
+└── vendor.css
+
+3 directories, 13 files
+```
+
+We have to move the HTML of the album cover to `src/app/components/album-cover/album-cover.html`.
+
+```html
+<div class="col-sm-3 col-md-3 col-lg-2 media default image-grid genre">
+  <a>
+    <div class="genreImage" [style.background-image]="'url('+album.image+')'"></div>
+  </a>
+</div>
+```
+
+and on the JavaScript side of the component we have to register the properties
+we want to use.
+
+```js
+@Component({
+  selector: 'album-cover',
+  ...
+  properties: ['album']
+})
+export class AlbumCover {
+  constructor() {}
+}
+```
+
+Then we have to move the styles to the corresponding component css file. This is
+because the styles are encapsulated for each component, so they won't be applied
+unless they are defined on a global css file on the right component.
+
+```css
+.genres-section{
+    margin-bottom: 0px;
+    padding-top: 20px;
+}
+
+.media {
+    margin-top: 15px !important;
+    padding-right: 5px !important;
+}
+
+.media.genre .genreImage {
+    padding-bottom: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.media.genre .name {
+    position: absolute;
+    top: 72%;
+    left: 5%;
+    right: 5%;
+    bottom: 0;
+    text-align: center;
+}
+
+.media.genre .name span {
+    color: #DFE0E6;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    border-bottom: 1px solid transparent;
+}
+```
+
+Once we created the new component we can use it from the main component.
+
+```html
+<div class="row fivecolumns">
+  <album-cover *ng-for="#album of albums" [album]="album"></album-cover>
+</div>
+```
+
+and on the JavaScript side we have to register the component
+
+```js
+import {AlbumCover} from './components/album-cover/album-cover';
+
+@Component({
+  selector: 'music-app',
+  ...
+  directives: [NgFor,AlbumCover],
+  ...
+})
+```
+
+### 4.1 Handle click event
+
+To handle click event you have to use the `(click)="handler()"` syntax.
+
+```html
+<div class="col-sm-3 col-md-3 col-lg-2 media default image-grid genre">
+  <a>
+    <div class="genreImage" [style.background-image]="'url('+album.image+')'" (click)="open()"></div>
+  </a>
+</div>
+```
+
+and you need to declare the attribute `model` as an attribute of the class in
+order to use it from the click handler `open`.
+
+```js
+...
+export class AlbumCover {
+  album: any;
+
+  constructor() {}
+
+  open() {
+    alert("You selected " + this.album.artist + " - " + this.album.album);
+  }
+}
+```
