@@ -1,22 +1,16 @@
-import {Component, bootstrap, NgFor} from 'angular2/angular2';
-import {Http} from 'angular2/http';
-import {AlbumCover} from './components/album-cover/album-cover';
+import {Component} from 'angular2/angular2';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {AlbumsPage} from './components/albums-page/albums-page';
 
 @Component({
   selector: 'music-app',
   providers: [],
   templateUrl: 'app/music.html',
   styleUrls: ['app/music.css'],
-  directives: [NgFor,AlbumCover],
+  directives: [AlbumsPage],
   pipes: []
 })
 export class MusicApp {
-  albums: any = [];
-
-  constructor(private http:Http) {
-    http
-      .get("/albums.json")
-      .map(response => response.json()["albums"])
-      .subscribe(albums => this.albums = albums)
+  constructor() {
   }
 }

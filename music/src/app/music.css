@@ -568,10 +568,3 @@ svg:not(:root) {
     background-repeat: no-repeat;
     -webkit-backface-visibility: hidden;
 }
-
-/********************************************************************/
-
-.genres-section{
-    margin-bottom: 0px;
-    padding-top: 20px;
-}

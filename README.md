@@ -360,3 +360,75 @@ import {MusicApp} from './app/music';
 
 bootstrap(MusicApp, [HTTP_PROVIDERS, ROUTER_PROVIDERS]);
 ```
+
+### 5.2 Create the `albums-page` component
+
+Generate the component and move everything to that component.
+
+```
+$ ng generate component albums-page
+version: 1.13.8
+installing component
+  create src/app/components/albums-page/albums-page.css
+  create src/app/components/albums-page/albums-page.html
+  create src/app/components/albums-page/albums-page.ts
+installing component-test
+  create src/app/components/albums-page/albums-page.spec.ts
+```
+
+src/app/components/albums-page/albums-page.ts
+
+```js
+import {Component, NgFor} from 'angular2/angular2';
+import {Http} from 'angular2/http';
+import {AlbumCover} from '../album-cover/album-cover';
+
+@Component({
+  selector: 'albums-page',
+  templateUrl: 'app/components/albums-page/albums-page.html',
+  styleUrls: ['app/components/albums-page/albums-page.css'],
+  providers: [],
+  directives: [NgFor, AlbumCover],
+  pipes: []
+})
+export class AlbumsPage {
+  albums: any = [];
+
+  constructor(private http:Http) {
+    http
+      .get("/albums.json")
+      .map(response => response.json()["albums"])
+      .subscribe(albums => this.albums = albums)
+  }
+}
+```
+
+src/app/components/albums-page/albums-page.html
+
+```html
+<div class="section-divider genres-section">
+  <div id="featuredPlaylistLabel">
+    Albums
+  </div>
+</div>
+<div id="genresAndMoods">
+  <div class="row fivecolumns">
+    <album-cover *ng-for="#album of albums" [album]="album"></album-cover>
+  </div>
+</div>
+```
+
+```css
+.genres-section{
+    margin-bottom: 0px;
+    padding-top: 20px;
+}
+```
+
+And update src/app/music.ts (omitted) and src/app/music.html accordingly
+
+```html
+...
+<albums-page></albums-page>
+...
+```

@@ -25,16 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="section-divider genres-section">
-        <div id="featuredPlaylistLabel">
-          Albums
-        </div>
-      </div>
-      <div id="genresAndMoods">
-        <div class="row fivecolumns">
-          <album-cover *ng-for="#album of albums" [album]="album"></album-cover>
-        </div>
-      </div>
+      <albums-page></albums-page>
     </div>
   </div>
 </div>
