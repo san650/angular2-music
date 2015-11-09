@@ -502,3 +502,12 @@ export class AlbumCover {
   }
 }
 ```
+
+## The end
+
+Some resources
+
+* [The Spotyngular Project](https://github.com/iranreyes/spotyngular) by Iran Reyes
+* [The Spotyngular Project](http://uruit.com/2015/10/29/benefits-and-tricks-of-angularjs-2-the-spotyngular-project/) - A series of blog posts by Iran Reyes
+* [Angular 2](https://angular.io/docs/ts/latest/) documentation
+* [angular-cli](https://github.com/angular/angular-cli) github
