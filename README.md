@@ -432,3 +432,42 @@ And update src/app/music.ts (omitted) and src/app/music.html accordingly
 <albums-page></albums-page>
 ...
 ```
+
+### 5.3 Create root route `/`
+
+Import `RouterConfig` which allows to define the routes. Also import the router
+directives to use in the templates.
+
+First we register the root route and indicate that it should load the
+`AlbumsPage` component.
+
+src/app/music.ts
+
+```js
+...
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+...
+
+@RouteConfig([
+  {
+    path:"/",
+    as: "Albums",
+    component: AlbumsPage
+  }
+])
+@Component({
+  directives: [ROUTER_DIRECTIVES],
+  pipes: []
+})
+export class MusicApp {
+...
+```
+
+And then we indicate where do we want to render the components in the template
+using the `<router-outlet>` directive.
+
+```html
+<router-outlet></router-outlet>
+```
+
+and that's it. If we reload the page, the root path it's going to be load.
