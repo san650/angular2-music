@@ -471,3 +471,14 @@ using the `<router-outlet>` directive.
 ```
 
 and that's it. If we reload the page, the root path it's going to be load.
+
+### 5.4 Adding a child route
+
+First, let's add another page (component).
+
+```
+$ ng generate tracks-page
+```
+
+and copy the template and CSS.
+
