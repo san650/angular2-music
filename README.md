@@ -326,3 +326,37 @@ export class AlbumCover {
   }
 }
 ```
+
+## 5. Routes
+
+Let's see how to use the routing facilities Angular 2.0 brings
+
+### 5.1 Register router provider
+
+To start using the routing facilities, we need to do a couple of things first:
+
+1. Include the JavaScript file
+2. Register the router providers in the application.
+
+So, first we need to include the JavaScript file as follows
+
+src/index.html
+
+```html
+...
+  <script src="vendor/angular2/bundles/router.dev.js"></script>
+...
+```
+
+then we have to include the providers in the application.
+
+src/app.ts
+
+```js
+import {bootstrap} from 'angular2/angular2';
+import {HTTP_PROVIDERS} from 'angular2/http';
+import {ROUTER_PROVIDERS} from 'angular2/router';
+import {MusicApp} from './app/music';
+
+bootstrap(MusicApp, [HTTP_PROVIDERS, ROUTER_PROVIDERS]);
+```
