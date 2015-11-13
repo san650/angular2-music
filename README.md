@@ -1,3 +1,9 @@
+# Overview
+
+These repo contains the materials and experimentations I did while preparing an Angular 2 workshop. It's now defunc, instead take a look at https://github.com/san650/angular-workshop-meetup-2015-11
+
+---
+
 # Angular 2.0 with angular-cli
 
 Disclaimer: Angular 2.0 and `angular-cli` are in alpha releases. So things will
