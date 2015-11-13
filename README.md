@@ -1,6 +1,6 @@
 # Overview
 
-These repo contains the materials and experimentations I did while preparing an Angular 2 workshop. It's now defunc, instead take a look at https://github.com/san650/angular-workshop-meetup-2015-11
+These repo contains the materials and the experiments I did while preparing an Angular 2 workshop. It's now defunc, instead take a look at https://github.com/san650/angular-workshop-meetup-2015-11
 
 ---
 
